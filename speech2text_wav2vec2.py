@@ -11,6 +11,10 @@ from transformers import Wav2Vec2ForCTC
 Copyright E. Laurent Benaroya, License Gnu GPL v3
 """
 
+if len(sys.argv) == 1:
+    print('Please provide an audio file as argument')
+    sys.exit()
+
 print(torch.__version__)
 torch.random.manual_seed(0)
 device = 'cpu'
