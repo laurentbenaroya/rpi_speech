@@ -2,7 +2,7 @@
 distil-gpt2 next sentence generation (run on raspberrypi 3B+, 1Go RAM)
 https://dejanbatanjac.github.io/gpt2-example/
 https://medium.com/analytics-vidhya/ai-writer-text-generation-using-gpt-2-transformers-4c33d8c52d5a
-E.L. Benaroya - 10/2022
+Copyright E.L. Benaroya - 10/2022 - License GNU GLP v3
 """
 
 

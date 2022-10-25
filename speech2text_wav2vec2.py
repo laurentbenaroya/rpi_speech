@@ -7,6 +7,9 @@ import sys
 from transformers import Wav2Vec2Processor
 from transformers import Wav2Vec2ForCTC
 
+"""
+Copyright E. Laurent Benaroya, License Gnu GPL v3
+"""
 
 print(torch.__version__)
 torch.random.manual_seed(0)
