@@ -1,6 +1,9 @@
 # rpi_speech
-This repo goes with my post [reconnaissance de la parole sur Raspberry Pi](https://astus-geekus.com/2022/10/23/607/), not yet published.
-Audio comes from : VCTK
+This repo goes with my post [reconnaissance de la parole sur Raspberry Pi](https://astus-geekus.com/2022/10/23/607/), **not yet published**.
+*You need to install pytorch*, the post explains how to do it on a Raspberry Pi.
+Then install the requirements.
+
+The audio comes from : VCTK
 
 usage :
 python speech2text_wav2vec2.py audio/p232_228.wav
