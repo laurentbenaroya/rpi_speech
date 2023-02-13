@@ -18,6 +18,9 @@ if len(sys.argv) == 1:
 print(torch.__version__)
 torch.random.manual_seed(0)
 device = 'cpu'
+usecuda = True
+if torch.cuda.is_available()and usecuda:
+    device = "cuda:0"
 
 SPEECH_FILE = sys.argv[1]
 waveform, sample_rate = snd.read(SPEECH_FILE)
@@ -39,14 +42,17 @@ print(f'Elapsed time {(time.time()-tic):0f}')
 print('tokenize')
 tic = time.time()
 input_values = processor(waveform, return_tensors="pt", padding="longest", sampling_rate=sample_rate).input_values  # Batch size 1
+input_values = input_values.to(device)
+model = model.to(device)
 print(input_values.shape)
 print(f'Elapsed time {(time.time()-tic):0f}')
 
 # retrieve logits
-print('retrieve logits')
-tic = time.time()
-logits = model(input_values).logits
-print(f'Elapsed time {(time.time()-tic):0f}')
+for _ in range(4):
+    print('retrieve logits')
+    tic = time.time()
+    logits = model(input_values).logits
+    print(f'Elapsed time {(time.time()-tic):0f}')
 
 # take argmax and decode
 print('take argmax and decode')
